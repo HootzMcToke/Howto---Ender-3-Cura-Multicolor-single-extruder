@@ -14,29 +14,52 @@ Section one: Setting up Cura 4.8 for Dual extrusion with single hotend
 
 1 - Open up Cura and copy down print settings 
 2 - press Ctrl+J to open up the profiles window
-3 - On the left hand side of that window click "Printers"
-4 - Open the "Machine Settings" for your printer (If that option is not avaiable you will most likely need to click activate at the the of the window)
-5 - Copy down all the settings (Copy to a notepad or somthing)
-6 - Click close on the bottom right hand corner 
-7 - Click "Add" along the top of the printers window
-8 - Open the dropdown for "Add a non-networked printer" 
-9 - Find "Custom" 
-10 - If "Custom FFF printer" is not selected, select it.
-11 -  On the right hand side change the name to whatever you will rememeber
-12 - Click "Add"
-13 - on the printer Tab; Replace the default settings with the ones you saved.
-14 - Once done change the "Number of extruders" to 2
-14 - Go into each of the Extruder tabs and change the "Ccompatible material diameter" to 1.75
-15 - Close the window it will autosave
-16 - Install the "Printer Settings" plugin from the ultimaker marketplace https://marketplace.ultimaker.com/app/cura/plugins/fieldofview/PrinterSettingsPlugin
-17 - Reboot Cura
-18 - Migrate any settings from your original printer settings over as the new profile will be set to stock settings.
-19 - Go down to the "Printer Settings" section of printer settings and enable "Extruders Share Heater"
+3 - Click "General" 
+4 - ensure the settings "Automaticly drop models to buildplate" and "Ensure models are kept apart" are disabled.
+5 - Click "Printers"
+6 - Open the "Machine Settings" for your printer (If that option is not avaiable you will most likely need to click activate at the the of the window)
+7 - Copy down all the settings (Copy to a notepad or somthing)
+8 - Click close on the bottom right hand corner 
+9 - Click "Add" along the top of the printers window
+10 - Open the dropdown for "Add a non-networked printer" 
+11 - Find "Custom" 
+12 - If "Custom FFF printer" is not selected, select it.
+13 -  On the right hand side change the name to whatever you will rememeber
+14 - Click "Add"
+14 - on the printer Tab; Replace the default settings with the ones you saved.
+15 - Once done change the "Number of extruders" to 2
+16 - Go into each of the Extruder tabs and change the "Ccompatible material diameter" to 1.75
+17 - Close the window it will autosave
+18 - Install the "Printer Settings" plugin from the ultimaker marketplace https://marketplace.ultimaker.com/app/cura/plugins/fieldofview/PrinterSettingsPlugin
+19 - Reboot Cura
+20 - Migrate any settings from your original printer settings over as the new profile will be set to stock settings.
+21 - Go down to the "Printer Settings" section of printer settings and enable "Extruders Share Heater"
 
 You are now all set for dual printing with a single hotend. 
 
 Section Two: Using cura for dual extrusion with single hotend
 
+1 - Import atleast two models 
+2 - Select all models
+3 - Right click and select "Merge Models"
+4 - Right Click again on the newly merged model and click "Ungroup Models"
+5 - Select each model, right click and select the extruder you wish to use
+6 - (Optional Step) Change materials or colors for each extruder (This makes it easyer to see which one is which)
+7 -  Make any changes you wish to settings
+8 - Slice model and save.
+
+This should provide you with a ready to go file if you have a dual extruder with a single hotend. If you wish to print this with a single extruder and single hotend you can follow the next steps
+
 Section Three: Editing of G-Code for single extruder multi color.
+
+* In this section we will be interacting with the G-code directly so if you are not comftrable with that feel free to ask for my help.
+* I use a user defined langauge in my Notepad++ for G-code (I can't recall where i got it from)
+
+1 - Open the saved gcode in Notepad++
+2 - Remove the first instance of T0
+3 - Replace all other instances of T0 with M600
+4 - Find and Replace all instances of T1 with M600
+5 - Save file and open in cura to ensure it worked (The model should appear as a single model as the extruder switch is now just a filament change)
+6 - If everything is ok upload to your machine and start printing. 
 
 Section Four: Results / Thoughts / Notes
