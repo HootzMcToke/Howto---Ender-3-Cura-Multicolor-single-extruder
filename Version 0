@@ -3,4 +3,40 @@ In trying to figure this out myself i was not able to find a good singular sourc
 This works with an Ender 3 (Or any other marlin based printer) using Cura 4.8
 
 
-I will update this with images and more info shortly 
+Required Things:
+
+1) Cura 4.8 or any recent version with the required features.
+2) A model that consits of atleast two parts (One for each color)
+3) Notepad++ or any other program to edit the g-code
+4) "Printer Settings" Plugin https://marketplace.ultimaker.com/app/cura/plugins/fieldofview/PrinterSettingsPlugin
+
+Section one: Setting up Cura 4.8 for Dual extrusion with single hotend
+
+1 - Open up Cura and copy down print settings 
+2 - press Ctrl+J to open up the profiles window
+3 - On the left hand side of that window click "Printers"
+4 - Open the "Machine Settings" for your printer (If that option is not avaiable you will most likely need to click activate at the the of the window)
+5 - Copy down all the settings (Copy to a notepad or somthing)
+6 - Click close on the bottom right hand corner 
+7 - Click "Add" along the top of the printers window
+8 - Open the dropdown for "Add a non-networked printer" 
+9 - Find "Custom" 
+10 - If "Custom FFF printer" is not selected, select it.
+11 -  On the right hand side change the name to whatever you will rememeber
+12 - Click "Add"
+13 - on the printer Tab; Replace the default settings with the ones you saved.
+14 - Once done change the "Number of extruders" to 2
+14 - Go into each of the Extruder tabs and change the "Ccompatible material diameter" to 1.75
+15 - Close the window it will autosave
+16 - Install the "Printer Settings" plugin from the ultimaker marketplace https://marketplace.ultimaker.com/app/cura/plugins/fieldofview/PrinterSettingsPlugin
+17 - Reboot Cura
+18 - Migrate any settings from your original printer settings over as the new profile will be set to stock settings.
+19 - Go down to the "Printer Settings" section of printer settings and enable "Extruders Share Heater"
+
+You are now all set for dual printing with a single hotend. 
+
+Section Two: Using cura for dual extrusion with single hotend
+
+Section Three: Editing of G-Code for single extruder multi color.
+
+Section Four: Results / Thoughts / Notes
